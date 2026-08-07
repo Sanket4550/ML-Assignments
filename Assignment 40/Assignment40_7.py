@@ -11,8 +11,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
 
-for rs in [0,10,42]:
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=rs)
-    model = DecisionTreeClassifier()
+for rs in [0, 10, 42]:
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=rs)
     model.fit(X_train, y_train)
-    print(rs, accuracy_score(y_test, model.predict(X_test)))
+    acc = accuracy_score(y_test, model.predict(X_test))
+    
+    print(f"Random State {rs} → Accuracy: {acc}")
+
+print("\nAnswer: Accuracy changes due to different data splits")
