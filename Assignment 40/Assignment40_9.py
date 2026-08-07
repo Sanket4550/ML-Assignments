@@ -18,3 +18,5 @@ X_train, X_test, y_train, y_test = train_test_split(X_new, y_new, test_size=0.2,
 model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
 print("New accuracy:", accuracy_score(y_test, model.predict(X_test)))
+
+print("Answer: Accuracy may improve due to better feature")
