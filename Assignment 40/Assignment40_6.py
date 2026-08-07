@@ -12,6 +12,9 @@ model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
-mis = X_test[y_pred != y_test]
-print("Misclassified count:", len(mis))
-print(mis)
+misclassified = X_test[y_pred != y_test]
+
+print("Number of Misclassified Students:", len(misclassified))
+print("\nMisclassified Data:\n", misclassified)
+
+print("\nAnswer: These are wrongly predicted cases")
