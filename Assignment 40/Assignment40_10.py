@@ -16,3 +16,5 @@ model.fit(X_train, y_train)
 train_acc = accuracy_score(y_train, model.predict(X_train))
 test_acc = accuracy_score(y_test, model.predict(X_test))
 print("Train:", train_acc, "Test:", test_acc)
+
+print("\nAnswer: If training >> testing → Overfitting")
