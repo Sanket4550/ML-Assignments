@@ -15,3 +15,4 @@ from sklearn.tree import plot_tree
 plt.figure()
 plot_tree(model, feature_names=X.columns, filled=True)
 plt.show()
+print("Answer: Tree shows decision rules used for prediction")
