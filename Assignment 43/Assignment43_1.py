@@ -4,13 +4,13 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-# Load dataset
+# Step1: Load dataset
 df = pd.read_csv("MarvellousInfosystems_PlayPredictor.csv")
 
 print("Dataset:")
 print(df)
 
-# Encode categorical columns
+# step 2: clean,prepare,manipulate data
 weather_encoder = LabelEncoder()
 temperature_encoder = LabelEncoder()
 play_encoder = LabelEncoder()
@@ -23,8 +23,8 @@ df["Play"] = play_encoder.fit_transform(df["Play"])
 X = df[["Weather", "Temperature"]]
 y = df["Play"]
 
-# Create and train KNN model
-# Assignment specifies K = 3
+# step 3: train data
+
 model = KNeighborsClassifier(n_neighbors=3)
 model.fit(X, y)
 
@@ -33,18 +33,18 @@ print("\nEnter weather and temperature:")
 weather = input("Weather (Sunny/Overcast/Rainy): ")
 temperature = input("Temperature (Hot/Cool/Mild): ")
 
-# Encode input
+
 weather_value = weather_encoder.transform([weather])[0]
 temperature_value = temperature_encoder.transform([temperature])[0]
 
-# Prediction
+# step 4: test data
 prediction = model.predict([[weather_value, temperature_value]])
 result = play_encoder.inverse_transform(prediction)
 
 print("\nPrediction:", result[0])
 
 
-# Function to calculate accuracy by splitting the dataset
+# step 5: calculate accuracy 
 def CheckAccuracy(k=3):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.5, random_state=42, stratify=y
