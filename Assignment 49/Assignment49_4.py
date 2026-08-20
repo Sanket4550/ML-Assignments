@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import euclidean
 
-# Dataset used for feature scaling
+# Dataset 
 data = np.array([
     [25, 20000],
     [30, 40000],
