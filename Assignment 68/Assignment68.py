@@ -1,6 +1,6 @@
-# Assignment68.py
 
-# 1. Manual Convolution
+
+# Q1. Manual Convolution
 
 image = [
     [0, 0, 0, 0, 0],
@@ -36,7 +36,7 @@ for row in feature_map:
     print(row)
 
 
-# 2. ReLU and Max Pooling
+# Q2. ReLU and Max Pooling
 
 feature_map = [
     [3, 3, 3],
@@ -86,7 +86,7 @@ for row in pooled_output:
 print("\nMax Pooling reduces the size of the feature map while keeping the maximum important value.")
 
 
-# 3. Flattening
+# Q3. Flattening
 
 matrix = [
     [6, 4],
